@@ -21,7 +21,7 @@ const LogIn = () => {
           <br />
 
           <h4 id="TitlePage">
-            to use applications you need connect MetaMask Wallet
+            To use applications you need connect MetaMask Wallet
           </h4>
           <button
             id="buttonLogIn"

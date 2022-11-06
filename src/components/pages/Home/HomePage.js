@@ -31,7 +31,7 @@ const HomePage = () => {
           setDataList={setDataList}
           account={account}
         />
-        {account && <LineChart arrayList={dataList} account={account} />}
+        {account && <LineChart  account={account} />}
       </div>
     </>
   );
