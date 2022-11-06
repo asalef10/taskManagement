@@ -1,0 +1,22 @@
+#container {
+  width: 80%;
+  margin-left: 13%;
+  margin-top: 57px;
+}
+#TitlePage {
+  text-align: center;
+  
+}
+#container{
+  margin-left: 16%;
+
+}
+#containerLogIn {
+  border: inset 11px #33aca8;
+
+
+}
+#miniContainer {
+  display: flex;
+  flex-direction: column;
+}
