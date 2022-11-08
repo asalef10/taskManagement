@@ -6,7 +6,6 @@ const LineChart = ({ account }) => {
   let chartDetails = JSON.parse(
     localStorage.getItem(`${account}_chartDetails`)
   );
-  console.log(chartDetails,account);
 
   const keysItem = Object.keys(chartDetails||{});
   const valuesItem = Object.values(chartDetails||{});

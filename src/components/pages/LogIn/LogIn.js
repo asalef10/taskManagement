@@ -2,7 +2,7 @@ import { useWeb3React } from "@web3-react/core";
 import { injected } from "../../../walletInjected/injected";
 const LogIn = () => {
   const { activate } = useWeb3React();
-  const ConnectWallet = () => {
+  const connectWallet = () => {
     if (window.ethereum) {
       activate(injected);
     } else {
@@ -26,7 +26,7 @@ const LogIn = () => {
           <button
             id="buttonLogIn"
             className="btn btn-info"
-            onClick={ConnectWallet}
+            onClick={connectWallet}
           >
             Connect MetaMask
           </button>
