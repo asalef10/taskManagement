@@ -1,6 +1,7 @@
-const Checkbox = ({checkbox,updateStatus,item}) => {
+const Checkbox = ({ checkbox, updateStatus, item }) => {
   return (
     <>
+    
       <input
         onChange={(e) => {
           updateStatus(item.id, e.target.checked);
@@ -14,4 +15,4 @@ const Checkbox = ({checkbox,updateStatus,item}) => {
     </>
   );
 };
-export default Checkbox
+export default Checkbox;

@@ -2,33 +2,12 @@ import { useState } from "react";
 import Table from "../../fetchers/Table/Table";
 import { v4 as uuidv4 } from "uuid";
 import AddTask from "../../fetchers/AddTask/AddTask";
-
+import UseTable from "../../useTable/UseTable";
 const ToDoList = ({ dataList, setDataList, account }) => {
   const [newTask, setNewTask] = useState({ status: false });
   const [taskSearch, setTaskSearch] = useState("");
   const [isTask, setIsTask] = useState(false);
-
-  const addTask = () => {
-    setIsTask((prev) => !prev);
-    if (dataList) {
-      setDataList((oldArray) => [...oldArray, newTask]);
-    } else {
-      setDataList([newTask]);
-    }
-
-    let chartDetails = JSON.parse(
-      localStorage.getItem(`${account}_chartDetails`)
-    );
-    const details = chartDetails || {};
-
-    if (!details[newTask.time]) {
-      chartDetails = { ...details, [newTask.time]: 0 };
-      localStorage.setItem(
-        `${account}_chartDetails`,
-        JSON.stringify(chartDetails)
-      );
-    }
-  };
+  const { addTask } = UseTable({ setDataList, setIsTask, dataList, newTask });
 
   return (
     <>
@@ -39,12 +18,14 @@ const ToDoList = ({ dataList, setDataList, account }) => {
         type="text"
         placeholder="search"
       />
+      <br />
       <Table
-        arr={dataList}
+        dataList={dataList}
         setDataList={setDataList}
         taskSearch={taskSearch}
         account={account}
       />
+      <br />
       &nbsp;
       {isTask ? (
         <>
