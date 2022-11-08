@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import EditTask from "../EditTask/EditTask.js";
 import Button from "../Button/Button.js";
 import { ExportTableToExcel } from "../ExportTableEl/ExportTableEl.js";
-import UseUtils from "../../useTable/UseTable.js";
+import UseTable from "../../useTable/UseTable.js";
 import ReadTask from "../ReadTask/ReadTask.js";
 
 const Table = ({ dataList, setDataList, taskSearch, account }) => {
@@ -11,7 +11,7 @@ const Table = ({ dataList, setDataList, taskSearch, account }) => {
   const [editPriorityLevel, setEditPriorityLevel] = useState("");
   const [filterPerformedTask, setFilterPerformedTask] = useState(false);
   const tableRef = useRef(null);
-  const { updateStatus, deleteTask, editToDo, filterListTaskDone } = UseUtils({
+  const { updateStatus, deleteTask, editToDo, filterListTaskDone } = UseTable({
     account,
     setDataList,
     setToDoEditId,
