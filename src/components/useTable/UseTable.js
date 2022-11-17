@@ -1,14 +1,16 @@
+import { useWeb3React } from "@web3-react/core";
 const UseTable = ({
   setDataList,
-  account,
   setToDoEditId,
   editDescription,
   editPriorityLevel,
   setFilterPerformedTask,
   setIsTask,
   dataList,
-  newTask
+  newTask,
 }) => {
+  const { account } = useWeb3React();
+
   const deleteTask = (removeIndex, itemId) => {
     updateStatus(itemId, false);
     setDataList((oldArray) => {
@@ -93,7 +95,7 @@ const UseTable = ({
     updateStatus,
     editToDo,
     filterListTaskDone,
-    addTask
+    addTask,
   };
 };
 
